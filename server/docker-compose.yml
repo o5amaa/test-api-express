@@ -1,0 +1,18 @@
+-- Active: 1706994964063@@httplocalhost@3330@testDB
+# Use root/example as user/password credentials
+version: "3.1"
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - 3330:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3331:8080
